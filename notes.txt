@@ -1,0 +1,94 @@
+to run -> npm run dev
+
+in terminal -> cd Documents
+-> mkdir express-project
+-> cd express-project
+-> mkdir mycontacts-backend
+-> cd mycontacts-backend
+-> npm init
+
+
+-> dowload -> npm i dotenv
+
+-> dotenv will give me an access to fetch the value of the port from env variable file with the help of process model
+
+
+-file order
+- serverr.js
+
+- folder -> routes
+- contactRoutes.js
+- server.js
+
+- create controllers so that controllers going to contain all our logic for request response and going to connect with our database
+- folder-> controllers
+-file order
+- contactController.js
+- contactRoutess.js
+- serverrr.js
+- next thing is accepts body from the request 
+- postman -> body 
+- {
+    "name":"Dipesh",
+    "email":"ananyaharish00@gmail.com",
+    "phone":"09019551675"
+    }
+- so for this we have to make use of middleware in serverrr.js at line 6
+and line 14 in contactController.js
+
+-> Now, lets see error handling with express framework
+-> if we pass just {} instead of name,email,phone inside it in postman body then it shows error, it will be html format but we want it in json
+-> so we see that in chapter 13
+
+chapter 13 -> MongoDB setup & CRUD Operations
+-folder -> middleware
+-file order
+-errorHandler.js
+- serverrrr.js
+
+-constants.js -> this file is to handle all my error
+
+- whenever we interact with MongoDB and Mangoose we always get a promise, so inorder to resolve that promise 
+in contactController.js use async await fnc()
+
+- after adding asynchandler in contactController.js file in all functions , next thing is to MongoDB database setup
+- go to browser and get MongoDB
+- link from mongodb website pasted below to connect
+
+- overview-> connect -> MongoDB campas
+- mongodb+srv://ananya:<db_password>@ananyacluster.o8cfp7f.mongodb.net/
+- mongodb+srv://ananya:aDmiN@ananyacluster.o8cfp7f.mongodb.net/mycontacts-backend
+
+- overview -> connect -> drivers 
+mongodb+srv://ananya:<db_password>@ananyacluster.o8cfp7f.mongodb.net/?retryWrites=true&w=majority&appName=Ananyacluster
+- paste it in .env
+
+- folder -> config
+- in order to connect with our mongodb database we will need a mongoose , which is a object model design schema for our entities like contact or users, and it helps us to communicate with mongodb database
+- file order
+- dbConnection.js
+- serverrrrr.js
+
+- now install mongoose
+-> npm i mongoose
+
+-> now lets create schema models 
+- folder -> models
+- file order
+- contactModel.js
+refer 
+-contactController.js
+-serverrrrr.js
+- this bitch models are not working in thunder client as well as postman 
+
+- chapter -> 14
+- JWT User Authentication & Protecting Routes
+- we are going to provide some endpoints to users to use while login and register
+- file order
+- server6.js
+-> go to routes folder and create -> userRoutes.js file 
+-> create controllers for users , go to controllers folder and create file -> userController.js
+-> userModel.js
+
+-> IN middleware folder create file -> validateTokenHanlder.js
+
